@@ -1,0 +1,8 @@
+(define (square x) (* x x))
+(define (sum-of-squares x y)
+  (+ (square x) (square y)))
+(define (max2 a b) (if (>= a b) a b))
+(define (sum-of-squares-of-two-large-number x y z)
+  (if (>= x y) (sum-of-squares x (max2 y z))
+               (sum-of-squares y (max2 x z)))
+  )
