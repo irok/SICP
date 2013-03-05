@@ -11,3 +11,8 @@ $RECYCLE.BIN/
 # Shortcut
 *.lnk
 *.url
+
+# others
+*.pdf
+
+

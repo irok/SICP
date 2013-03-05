@@ -1,5 +1,6 @@
 use strict;
 use warnings;
+use bigint;
 
 my %step;
 my @denomination = (0, 1, 5, 10, 25, 50);
@@ -18,6 +19,5 @@ sub cc_step {
 	return $step{$key};
 }
 
-printf "%3d:%6d (+%3d)\n", $_, cc_step($_,5), cc_step($_,5)-cc_step($_-1||1,5) for 1 .. 100;
-
+print $_, ' ', cc_step($_,5), "\n" for 1 .. 100000;
 
