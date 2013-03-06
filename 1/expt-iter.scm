@@ -1,4 +1,4 @@
-(define (myexpt b n)
+(define (my-expt b n)
   (expt-iter b n 1))
 
 (define (expt-iter b counter product)
