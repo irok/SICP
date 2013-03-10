@@ -13,6 +13,5 @@ $RECYCLE.BIN/
 *.url
 
 # others
+*.bak
 *.pdf
-
-
