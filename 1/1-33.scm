@@ -3,9 +3,11 @@
 
 (define (filtered-accumulate combiner null-value term a next b filter)
   (define (iter i result)
-    (cond ((> i b) result)
-          ((filter i) (iter (next i) (combiner (term i) result)))
-          (else (iter (next i) result))))
+    (if (> i b)
+        result
+        (iter (next i) (if (filter i)
+                           (combiner (term i) result)
+                           result))))
   (iter a null-value))
 
 ; prime?
