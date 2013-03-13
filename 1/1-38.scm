@@ -1,4 +1,4 @@
-(define tolerance 0.0001)
+(define tolerance 0.00001)
 
 (define (cont-frac n d k)
   (define (iter i result)
