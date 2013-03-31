@@ -5,6 +5,4 @@
   (lambda (x) (g (f x))))
 
 (define (repeated f n)
-  (if (= n 1)
-    f
-    (repeated (my-compose f f) (- n 1))))
+  (if (= n 1) f (my-compose f (repeated f (- n 1)))))
