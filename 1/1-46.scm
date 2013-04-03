@@ -15,7 +15,8 @@
 
 ; close-enough?
 (define (close-enough? v1 v2)
-  (< (abs (- v1 v2)) 0.00001))
+  (let ((tolerance 0.00001))
+    (< (abs (- v1 v2)) tolerance)))
 
 ; 1.1.7
 (define (im-sqrt x)
