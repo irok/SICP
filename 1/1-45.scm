@@ -37,5 +37,5 @@
   (fixed-point ((repeated average-damp c) (lambda (y) (/ x (pow y (- n 1))))) 1.0))
 
 (define (n-th-root n x)
-  (define (damp-count n) (ceiling (/ (log n) (log 2))))
+  (define (damp-count n) (floor (/ (log n) (log 2))))
   (fixed-point ((repeated average-damp (damp-count n)) (lambda (y) (/ x (pow y (- n 1))))) 1.0))
