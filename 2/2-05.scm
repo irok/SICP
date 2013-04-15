@@ -1,0 +1,26 @@
+(define (my-cons a b)
+  (* (expt 2 a) (expt 3 b)))
+
+; (define (my-car n)
+;   (define (iter m a)
+;     (if (= (remainder m 2) 0)
+;         (iter (/ m 2) (+ a 1))
+;         a))
+;   (iter n 0))
+
+; (define (my-cdr n)
+;   (define (iter m b)
+;     (if (= (remainder m 3) 0)
+;         (iter (/ m 3) (+ b 1))
+;         b))
+;   (iter n 0))
+
+(define (count-divisor n d)
+  (define (iter m r)
+    (if (= (remainder m d) 0)
+        (iter (/ m d) (+ r 1))
+        r))
+  (iter n 0))
+
+(define (my-car n) (count-divisor n 2))
+(define (my-cdr n) (count-divisor n 3))
