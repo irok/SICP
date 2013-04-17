@@ -1,0 +1,5 @@
+(define (my-last-pair items)
+  (let ((next (cdr items)))
+       (if (null? next)
+           (cons (car items) null)
+           (my-last-pair next))))
