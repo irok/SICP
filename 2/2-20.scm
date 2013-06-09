@@ -8,5 +8,3 @@
              (append result (list (car items)))
              result)
          (cdr items)))))
-
-            
