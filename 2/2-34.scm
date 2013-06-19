@@ -6,6 +6,6 @@
           (accumulate op initial (cdr sequence)))))
 
 (define (horner-eval x coefficient-sequence)
-  (accumulate (lambda (this-coeff higher-terms) (+ this-coeff (* x higher-terms)))
+  (accumulate (lambda (this-coeff higher-terms) (+ (* higher-terms x) this-coeff))
               0
               coefficient-sequence))
