@@ -22,7 +22,7 @@
 (define (flatmap proc seq)
   (accumulate append nil (map proc seq)))
 
-; unique-pairs
+; unique pairs
 (define (unique-pairs n)
   (flatmap
    (lambda (i)
@@ -38,6 +38,6 @@
           (unique-pairs (- i 1))))
    (enumerate-interval 3 n)))
 
-; 2-41 (no name...)
+; 2.41 (no name...)
 (define (proc-2-41 n s)
   (filter (is-equals-to-sum-of-list? s) (unique-triads n)))
