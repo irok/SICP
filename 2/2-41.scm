@@ -1,10 +1,6 @@
 (define nil '())
 (define (square n) (* n n))
 
-; is equals to sum of list?
-(define (is-equals-to-sum-of-list? n)
-  (lambda (seq) (= n (accumulate + 0 seq))))
-
 ; accumulate
 (define (accumulate op initial sequence)
   (if (null? sequence)
@@ -38,6 +34,10 @@
           (unique-pairs (- i 1))))
    (enumerate-interval 3 n)))
 
+; sum of list is equals to s?
+(define (sum-of-list-is-equal-to-s? s)
+  (lambda (seq) (= s (accumulate + 0 seq))))
+
 ; 2.41 (no name...)
-(define (proc-2-41 n s)
-  (filter (is-equals-to-sum-of-list? s) (unique-triads n)))
+(define (proc-2-41 s n)
+  (filter (sum-of-list-is-equal-to-s? s) (unique-triads n)))
