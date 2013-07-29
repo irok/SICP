@@ -46,7 +46,7 @@
   (define (safe-row-n? row-n n)
     (or (= row-n row) (= (abs (- row-n row)) n)))
   (define (safe-row? n rest)
-    (cond ((null? rest) #t)
+    (cond ((= n k) #t)
           ((safe-row-n? (car (car rest)) n) #f)
           (else
            (safe-row? (+ n 1) (cdr rest)))))
